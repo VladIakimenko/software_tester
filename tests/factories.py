@@ -1,12 +1,10 @@
 import logging
-
 import factory
-from factory.fuzzy import FuzzyText
 
 # Project
 from api.models import *
 
-__all__ = ["AlchemyModelFactory", "SuperAdminFactory"]
+__all__ = ["AlchemyModelFactory", "choose_user_factory", "output"]
 
 logger = logging.getLogger(__name__)
 
@@ -33,11 +31,27 @@ class AlchemyModelFactory(factory.alchemy.SQLAlchemyModelFactory):
 
 
 class AbstractUserFactory(AlchemyModelFactory):
-    email = FuzzyText(prefix="email@", length=20, suffix="example.com")
+    email = factory.Faker("email")
     first_name = factory.Faker("first_name")
-    last_name = factory.Faker("last_name")
+    last_name = factory.Faker("last_name")    
+    is_email_confirmed = True
+    is_confirmed = True
+    is_blocked = False
 
 
 class SuperAdminFactory(AbstractUserFactory):
+    
     class Meta:
         model = SuperAdmin
+
+
+class OperatorFactory(AbstractUserFactory):
+
+    class Meta:
+        model = Operator
+
+
+def choose_user_factory(identity):
+    return(SuperAdminFactory, OperatorFactory)[identity == "OPERATOR"]
+
+    

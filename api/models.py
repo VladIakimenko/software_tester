@@ -44,6 +44,7 @@ __all__ = [
     "ExchangeRatesRecord",
 ]
 
+
 logger = logging.getLogger(__name__)
 
 

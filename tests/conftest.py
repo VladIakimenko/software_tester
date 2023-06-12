@@ -3,6 +3,7 @@ import importlib
 
 from django.conf import settings
 from django.core.management import call_command
+from django.test import Client
 
 # SQLAlchemy
 from sqlalchemy_utils import drop_database, create_database, database_exists
@@ -14,6 +15,11 @@ from lamb.db.session import metadata, lamb_db_session_maker
 import pytest
 
 from .factories import *
+
+
+@pytest.fixture
+def client():
+    return Client()
 
 
 @pytest.fixture
