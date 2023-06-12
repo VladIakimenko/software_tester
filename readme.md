@@ -3,7 +3,7 @@
 Tests for a Django/SQLAlchemy Authentication API project.
 The tests aim to validate system functionalities including system ping and version validation, handbook management, user authentication, user viewing, handling of exchange rates, password setting and updating, validation of input data. These tests include both positive scenarios (where operation is as expected) and negative scenarios (where operation deviates from the norm).
 
-The testing suite utilizes both standard and parameterized tests as well as mock testing. Standard tests were used in cases where we have a set input and output data, such as validating API endpoints (`ping`, `version`, `handbooks`, etc.), while mock testing was used where the isolation of certain elements from external dependencies was required (like the models testing, where the tests were focused on the functionality of the model methods themselves, without involving the external password hashing or verification functionalities.
+The testing suite utilizes both standard and parameterized tests as well as mock testing. Standard tests were used in cases where we have a set input and output data, such as validating API endpoints (`ping`, `version`, `handbooks`, etc.), while mock testing was used where the isolation of certain elements from external dependencies was required (like the models testing, where the tests were focused on the functionality of the model methods themselves, without involving the external password hashing or verification functionalities).
 
 Below is a brief summary of the main areas covered by the tests:
 
@@ -34,5 +34,5 @@ To run the tests, follow the instructions below:
 The tests can be run in parallel using the pytest-xdist plugin. To run the tests in parallel execute:
     pytest -n <INT> 
     
-Where <INT> is the number of CPU available. Use ''auto'' for automatic determination
+Where <INT> is the number of CPU available. Use "auto" for automatic determination.
 
