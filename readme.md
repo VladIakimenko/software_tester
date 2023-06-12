@@ -32,7 +32,7 @@ To run the tests, follow the instructions below:
     pytest tests
     
 The tests can be run in parallel using the pytest-xdist plugin. To run the tests in parallel execute:
-    pytest -n <INT> 
+    pytest -n INT
     
-Where <INT> is the number of CPU available. Use "auto" for automatic determination.
+Where INT is the number of CPU available. Use "auto" for automatic determination.
 
