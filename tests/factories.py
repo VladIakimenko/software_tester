@@ -4,7 +4,7 @@ import factory
 # Project
 from api.models import *
 
-__all__ = ["AlchemyModelFactory", "choose_user_factory", "output"]
+__all__ = ["AlchemyModelFactory", "choose_user_factory"]
 
 logger = logging.getLogger(__name__)
 
